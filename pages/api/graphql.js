@@ -2,8 +2,6 @@ import { ApolloServer } from 'apollo-server-micro';
 import { MongoClient } from 'mongodb';
 import { schema } from '../../apollo/schema';
 
-// const { dbUrl } = require('../../config.js');
-
 let db;
 
 const apolloServer = new ApolloServer({
