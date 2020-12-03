@@ -2,7 +2,7 @@ import { ApolloServer } from 'apollo-server-micro';
 import { MongoClient } from 'mongodb';
 import { schema } from '../../apollo/schema';
 
-const { dbUrl } = require('../../config.js');
+// const { dbUrl } = require('../../config.js');
 
 let db;
 
@@ -11,7 +11,7 @@ const apolloServer = new ApolloServer({
   context: async () => {
     if (!db) {
       try {
-        const dbClient = new MongoClient(dbUrl,
+        const dbClient = new MongoClient(process.env.dbUrl,
           { useNewUrlParser: true, useUnifiedTopology: true }
         )
 
